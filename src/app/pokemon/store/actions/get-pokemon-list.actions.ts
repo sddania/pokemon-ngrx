@@ -13,5 +13,5 @@ export const loadGetPokemonListsSuccess = createAction(
 
 export const loadGetPokemonListsFailure = createAction(
   '[GetPokemonList] call GetPokemonLists Failure',
-  props<{ error: Error }>()
+  props<{ error: any }>()
 );

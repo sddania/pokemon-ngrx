@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { PokemonClient } from 'pokenode-ts';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -15,10 +16,11 @@ import { PokemonClient } from 'pokenode-ts';
     BrowserModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     PokemonModule,
   ],
   providers: [
-    { provide: PokemonClient, useValue: new PokemonClient() }
+    { provide: PokemonClient, useValue: new PokemonClient({ }) }
   ],
   bootstrap: [AppComponent]
 })

@@ -10,6 +10,11 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
   </table>
+  <mat-paginator
+            [length]="pokemonListCount$ | async"
+            [pageSize]="20"
+            (page)="setPage($event)"
+            aria-label="Select page"></mat-paginator>
 </ng-container>
 <ng-template #noData>
   no data to list!
