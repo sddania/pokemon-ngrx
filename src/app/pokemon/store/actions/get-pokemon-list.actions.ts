@@ -1,17 +1,17 @@
 import { createAction, props } from '@ngrx/store';
 import { NamedAPIResourceList } from 'pokenode-ts';
 
-export const loadGetPokemonLists = createAction(
+export const getPokemonLists = createAction(
   '[GetPokemonList] call GetPokemonLists',
   props<{ offset?: number, limit?: number }>()
 );
 
-export const loadGetPokemonListsSuccess = createAction(
+export const getPokemonListsSuccess = createAction(
   '[GetPokemonList] call GetPokemonLists Success',
   props<{ result: NamedAPIResourceList }>()
 );
 
-export const loadGetPokemonListsFailure = createAction(
+export const getPokemonListsFailure = createAction(
   '[GetPokemonList] call GetPokemonLists Failure',
   props<{ error: any }>()
 );

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
-import { loadGetPokemonLists } from '../../store/actions/get-pokemon-list.actions';
+import { getPokemonLists } from '../../store/actions/get-pokemon-list.actions';
 import { pokemonList, pokemonListCount } from '../../store/selectors/pokemon-list.selectors';
 
 @Component({
@@ -21,11 +21,11 @@ export class PokemonListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch(loadGetPokemonLists({}))
+    this.store.dispatch(getPokemonLists({}))
   }
 
   setPage(evt: PageEvent) {
-    this.store.dispatch(loadGetPokemonLists({
+    this.store.dispatch(getPokemonLists({
       offset: evt.pageIndex * evt.pageSize,
       limit: evt.pageSize
     }))
