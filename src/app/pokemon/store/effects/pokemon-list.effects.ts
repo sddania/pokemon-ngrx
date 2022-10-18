@@ -4,8 +4,6 @@ import { PokemonClient } from 'pokenode-ts';
 import { mergeMap, map, catchError, from, of } from 'rxjs';
 import { getPokemonLists, getPokemonListsFailure, getPokemonListsSuccess } from '../actions/get-pokemon-list.actions';
 
-
-
 @Injectable()
 export class PokemonListEffects {
 
