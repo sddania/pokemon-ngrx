@@ -1,10 +1,11 @@
 <ng-container *ngIf="{
-  pokemonList: pokemonList$ | async,
-  pokemonListCount: pokemonListCount$ | async
+  pokemonList: (pokemonList$ | async)!,
+  pokemonListCount: (pokemonListCount$ | async)!
 } as vm">
-  <ng-container *ngIf="(vm.pokemonList ?? []).length > 0; else noData">
 
-    <table mat-table [dataSource]="vm.pokemonList ?? []">
+  <ng-container *ngIf="vm.pokemonList.length > 0; else noData">
+
+    <table mat-table [dataSource]="vm.pokemonList">
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -12,17 +13,22 @@
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        {{ row }}
+      </tr>
 
     </table>
     <mat-paginator
-              [length]="vm.pokemonListCount ?? 0"
+              [length]="vm.pokemonListCount"
               [pageSize]="20"
               (page)="setPage($event)"
               aria-label="Select page">
     </mat-paginator>
+
   </ng-container>
+
   <ng-template #noData>
     no data to list!
   </ng-template>
+
 </ng-container>
