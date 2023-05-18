@@ -25,8 +25,7 @@ import { environment } from '../environments/environment';
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
     EffectsModule.forRoot([]),
-    PokemonModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    PokemonModule
   ],
   providers: [
     { provide: PokemonClient, useValue: new PokemonClient({ }) }

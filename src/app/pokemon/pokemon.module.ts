@@ -4,11 +4,10 @@ import { StoreModule } from '@ngrx/store';
 import * as fromPokemonStore from './store/pokemon-store';
 import { reducers } from './store/reducers';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
-import { MatTableModule } from '@angular/material/table';
 import { EffectsModule } from '@ngrx/effects';
 import { PokemonListEffects } from './store/effects/pokemon-list.effects';
+import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
 
 
 @NgModule({

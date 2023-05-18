@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Store } from '@ngrx/store';
-import { map } from 'rxjs';
 import { getPokemonLists } from '../../store/actions/get-pokemon-list.actions';
 import { pokemonList, pokemonListCount } from '../../store/selectors/pokemon-list.selectors';
 

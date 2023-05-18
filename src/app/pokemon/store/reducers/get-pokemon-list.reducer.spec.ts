@@ -18,4 +18,11 @@ describe("pokemon list reducer", () => {
 
       expect(actual).toEqual({...initialState, result: testValue.result});
   })
+
+  it('reducers', () => {
+    let state;
+    state = pokemonReducer({result:{count:0,results:[],next:null,previous:null},loading:false}, {type:'[GetPokemonList] call GetPokemonLists'});
+    expect(state).toEqual({result:{count:0,results:[],next:null,previous:null},loading:true});
+  });
+
 })
