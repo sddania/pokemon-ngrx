@@ -1,6 +1,7 @@
 # PokemonNgrx
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5 upgraded to 16.0.2.
+The apps show a list of Pokémon, this is an example project to show ngRx capabilities. 
 
 ## Development server
 
